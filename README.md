@@ -1,7 +1,7 @@
 # Lista-de-Tarefas-a-Fazer
 Lista criada utilizando HTML5 CSS3 e Javascript. Utilizando fontes do GoogleFonts
 
-Uma aplicação web simples para gerenciar suas tarefas diárias, com design moderno em glassmorphism e persistência de dados local, criado utilizando HTML5, CSS3 e Javascript, também está sendo utilizado fontes do GoogleFonts e FontAwesome
+Uma aplicação web simples para gerenciar suas tarefas diárias, com design moderno em glassmorphism e persistência de dados local, criado utilizando HTML5, CSS3 e Javascript, também está sendo utilizado fontes do GoogleFonts e icones do FontAwesome
 
 ## ✨ Funcionalidades
 
