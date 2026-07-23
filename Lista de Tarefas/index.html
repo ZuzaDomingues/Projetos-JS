@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de coisas a fazer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h1>Tarefas a fazer</h1>
+            <div class="estatisticas-container">
+                <div class="detalhes">
+                    <h3>Você consegue!</h3>
+                    <div id="barra-progresso">
+                        <div id="progresso"></div>
+                    </div>
+                </div>
+                <div class="numeros-estatisticas">
+                    <p id="numeros">0 / 0</p>
+                </div>
+            </div>
+            <form class="area-input">
+                <input type="text" id="input-tarefa" placeholder="Adicionar nova tarefa">
+                <button type="submit" id="botao-adicionar"><i class="fa-solid fa-plus"></i></button>
+            </form>
+            <div class="tarefas-container">
+                <ul id="lista-tarefas">
+                 
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="js/script.js"></script>
+
+</html>
