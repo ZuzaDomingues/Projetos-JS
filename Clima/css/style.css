@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+#container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.6);
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== FORMULÁRIO DE BUSCA ===== */
+#search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 5px 5px 5px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+#search:focus-within {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#search i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+}
+
+#search input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    padding: 12px 0;
+}
+
+#search input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+}
+
+#search button {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#search button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+}
+
+#search button:active {
+    transform: scale(0.95);
+}
+
+/* ===== TÍTULO DA CIDADE ===== */
+#title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+}
+
+/* ===== INFORMAÇÕES DO CLIMA ===== */
+#infos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ===== TEMPERATURA PRINCIPAL ===== */
+#temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#temp_img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+#temp div {
+    display: flex;
+    flex-direction: column;
+}
+
+#temp_value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+#temp_value sup {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+#temp_description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+/* ===== OUTRAS INFORMAÇÕES ===== */
+.other_infos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease;
+}
+
+.info:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.info i {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+/* Ícones coloridos */
+#temp_max_icon {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+}
+
+#temp_min_icon {
+    background: rgba(78, 205, 196, 0.2);
+    color: #4ecdc4;
+}
+
+#humidity_icon {
+    background: rgba(74, 144, 226, 0.2);
+    color: #4a90d9;
+}
+
+#wind_icon {
+    background: rgba(255, 165, 0, 0.2);
+    color: #ffa500;
+}
+
+.info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.info h2 {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.info p sup {
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+
+/* ===== ALERTA / MENSAGEM ===== */
+#alert {
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 0.95rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#alert.erro {
+    background: rgba(255, 107, 107, 0.15);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+}
+
+#alert.sucesso {
+    background: rgba(78, 205, 196, 0.15);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    color: #4ecdc4;
+}
+
+#alert.carregando {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#weather {
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+#alert.carregando i {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 600px) {
+    #container {
+        padding: 1.5rem;
+        gap: 20px;
+    }
+
+    #title {
+        font-size: 1.4rem;
+    }
+
+    #temp_value {
+        font-size: 2.8rem;
+    }
+
+    #temp_value sup {
+        font-size: 1.2rem;
+    }
+
+    #temp_img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .other_infos {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .info {
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .info i {
+        font-size: 1.2rem;
+        width: 34px;
+        height: 34px;
+    }
+
+    .info p {
+        font-size: 1rem;
+    }
+
+    #search input {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+
+    #search button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    #container {
+        padding: 1rem;
+        gap: 15px;
+    }
+
+    #temp {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    #temp_value {
+        font-size: 2.2rem;
+    }
+
+    .other_infos {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .info {
+        padding: 10px 12px;
+        border-radius: 10px;
+    }
+
+    .info i {
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+    }
+
+    .info h2 {
+        font-size: 0.6rem;
+    }
+
+    .info p {
+        font-size: 0.9rem;
+    }
+
+    #title {
+        font-size: 1.2rem;
+    }
+}

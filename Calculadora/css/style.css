@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.calculator h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.calculator h1 i {
+    color: #ff6f91;
+}
+
+/* ===== DISPLAY ===== */
+.display-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+#display {
+    width: 100%;
+    padding: 20px 25px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    min-height: 80px;
+    letter-spacing: 1px;
+}
+
+#display:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+#display::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#historico {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+/* ===== BOTÕES ===== */
+.box-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.box-buttons button {
+    padding: 18px 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.box-buttons button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.box-buttons button:active::before {
+    width: 200px;
+    height: 200px;
+}
+
+.box-buttons button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.box-buttons button:active {
+    transform: scale(0.95);
+}
+
+/* Botões especiais */
+.btn-limpar {
+    background: rgba(255, 107, 107, 0.3) !important;
+    color: #ff6b6b !important;
+}
+
+.btn-limpar:hover {
+    background: rgba(255, 107, 107, 0.5) !important;
+}
+
+.btn-back {
+    background: rgba(255, 165, 0, 0.2) !important;
+    color: #ffa500 !important;
+}
+
+.btn-back:hover {
+    background: rgba(255, 165, 0, 0.4) !important;
+}
+
+.btn-operador {
+    background: rgba(255, 111, 145, 0.2) !important;
+    color: #ff6f91 !important;
+}
+
+.btn-operador:hover {
+    background: rgba(255, 111, 145, 0.4) !important;
+}
+
+.btn-resultado {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    grid-row: span 2;
+}
+
+.btn-resultado:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 25px rgba(245, 87, 108, 0.6);
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 1.5rem;
+    }
+
+    #display {
+        font-size: 1.5rem;
+        padding: 15px 20px;
+        min-height: 65px;
+    }
+
+    .box-buttons button {
+        padding: 15px 8px;
+        font-size: 1.1rem;
+    }
+}
