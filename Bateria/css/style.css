@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* ===== APP PRINCIPAL ===== */
+.player-app {
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.6);
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.player-app h1 {
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.player-app h1 i {
+    color: #ff6f91;
+}
+
+.subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.grid-bateria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 colunas em vez de 4 */
+    gap: 12px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.tecla {
+    position: relative;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 10px;
+    min-height: 110px;
+    user-select: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    gap: 6px;
+}
+
+.tecla:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.tecla:active,
+.tecla.ativo {
+    transform: translateY(2px) scale(0.97);
+    background: linear-gradient(180deg, rgba(255, 111, 145, 0.3) 0%, rgba(255, 111, 145, 0.1) 100%);
+    border-color: #ff6f91;
+    box-shadow: 0 2px 10px rgba(255, 111, 145, 0.3);
+}
+
+.tecla .icone {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.tecla .nome {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tecla .atalho {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+
+/* ===== CORES INDIVIDUAIS ===== */
+.tecla[data-som="kick"]:hover { border-color: #ff6b6b; }
+.tecla[data-som="kick"]:active,
+.tecla[data-som="kick"].ativo { background: linear-gradient(180deg, rgba(255, 107, 107, 0.3) 0%, rgba(255, 107, 107, 0.1) 100%); }
+
+.tecla[data-som="snare"]:hover { border-color: #4ecdc4; }
+.tecla[data-som="snare"]:active,
+.tecla[data-som="snare"].ativo { background: linear-gradient(180deg, rgba(78, 205, 196, 0.3) 0%, rgba(78, 205, 196, 0.1) 100%); }
+
+.tecla[data-som="clap"]:hover { border-color: #ffe66d; }
+.tecla[data-som="clap"]:active,
+.tecla[data-som="clap"].ativo { background: linear-gradient(180deg, rgba(255, 230, 109, 0.3) 0%, rgba(255, 230, 109, 0.1) 100%); }
+
+.tecla[data-som="hihat"]:hover { border-color: #a8e6cf; }
+.tecla[data-som="hihat"]:active,
+.tecla[data-som="hihat"].ativo { background: linear-gradient(180deg, rgba(168, 230, 207, 0.3) 0%, rgba(168, 230, 207, 0.1) 100%); }
+
+.tecla[data-som="openhat"]:hover { border-color: #ffd93d; }
+.tecla[data-som="openhat"]:active,
+.tecla[data-som="openhat"].ativo { background: linear-gradient(180deg, rgba(255, 217, 61, 0.3) 0%, rgba(255, 217, 61, 0.1) 100%); }
+
+.tecla[data-som="ride"]:hover { border-color: #6c5ce7; }
+.tecla[data-som="ride"]:active,
+.tecla[data-som="ride"].ativo { background: linear-gradient(180deg, rgba(108, 92, 231, 0.3) 0%, rgba(108, 92, 231, 0.1) 100%); }
+
+.tecla[data-som="tink"]:hover { border-color: #fd79a8; }
+.tecla[data-som="tink"]:active,
+.tecla[data-som="tink"].ativo { background: linear-gradient(180deg, rgba(253, 121, 168, 0.3) 0%, rgba(253, 121, 168, 0.1) 100%); }
+
+.tecla[data-som="tom"]:hover { border-color: #fdcb6e; }
+.tecla[data-som="tom"]:active,
+.tecla[data-som="tom"].ativo { background: linear-gradient(180deg, rgba(253, 203, 110, 0.3) 0%, rgba(253, 203, 110, 0.1) 100%); }
+
+.tecla[data-som="boom"]:hover { border-color: #e17055; }
+.tecla[data-som="boom"]:active,
+.tecla[data-som="boom"].ativo { background: linear-gradient(180deg, rgba(225, 112, 85, 0.3) 0%, rgba(225, 112, 85, 0.1) 100%); }
+
+/* ===== TECLAS ESPECIAIS (desabilitadas) ===== */
+.tecla.especial {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.03);
+    opacity: 0.4;
+}
+
+.tecla.especial:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== STATUS ===== */
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    font-weight: 300;
+    min-height: 50px;
+    transition: all 0.3s ease;
+}
+
+.status i {
+    color: #ff6f91;
+    font-size: 1.2rem;
+}
+
+.status.tocando {
+    background: rgba(255, 111, 145, 0.15);
+    border-color: rgba(255, 111, 145, 0.3);
+    color: #fff;
+}
+
+.status .som-tocado {
+    color: #ff6f91;
+    font-weight: 600;
+}
+
+/* ===== CONTROLES ===== */
+.controles {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.controles button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-ajuda {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-ajuda:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-limpar {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.btn-limpar:hover {
+    background: rgba(255, 107, 107, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 0.8rem;
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+.footer i {
+    margin-right: 5px;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.tecla.ativo {
+    animation: pulse 0.15s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status {
+    animation: fadeInUp 0.3s ease;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .player-app {
+        padding: 1.2rem;
+        gap: 18px;
+    }
+
+    .player-app h1 {
+        font-size: 1.5rem;
+    }
+
+    .grid-bateria {
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .tecla {
+        min-height: 85px;
+        padding: 12px 8px;
+        border-radius: 10px;
+    }
+
+    .tecla .icone {
+        font-size: 1.5rem;
+    }
+
+    .tecla .nome {
+        font-size: 0.7rem;
+    }
+
+    .tecla .atalho {
+        font-size: 0.6rem;
+    }
+
+    .controles {
+        flex-direction: column;
+    }
+
+    .controles button {
+        justify-content: center;
+        padding: 12px;
+    }
+
+    .status {
+        font-size: 0.85rem;
+        padding: 10px 15px;
+        min-height: 40px;
+    }
+
+    .footer {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .grid-bateria {
+        gap: 5px;
+        padding: 8px;
+    }
+
+    .tecla {
+        min-height: 70px;
+        padding: 8px 4px;
+        border-radius: 8px;
+    }
+
+    .tecla .icone {
+        font-size: 1.2rem;
+    }
+
+    .tecla .nome {
+        font-size: 0.6rem;
+    }
+
+    .tecla .atalho {
+        font-size: 0.5rem;
+    }
+}

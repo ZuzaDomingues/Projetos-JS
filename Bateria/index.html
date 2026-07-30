@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Bateria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="player-app">
+            <h1><i class="fa-solid fa-drum"></i> Bateria Digital</h1>
+            
+            <div class="subtitle">
+                <p>Clique nas teclas ou use o teclado para tocar</p>
+            </div>
+
+            <!-- Grid 3x3 -->
+            <div class="grid-bateria">
+                <button class="tecla" data-som="kick">
+                    <span class="nome">Kick</span>
+                    <span class="atalho">K</span>
+                </button>
+                <button class="tecla" data-som="snare">
+                    <span class="nome">Snare</span>
+                    <span class="atalho">S</span>
+                </button>
+                <button class="tecla" data-som="clap">
+                    <span class="nome">Clap</span>
+                    <span class="atalho">C</span>
+                </button>
+
+                <button class="tecla" data-som="hihat">
+                    <span class="nome">Hi-Hat</span>
+                    <span class="atalho">H</span>
+                </button>
+                <button class="tecla" data-som="openhat">
+                    <span class="nome">Open Hat</span>
+                    <span class="atalho">O</span>
+                </button>
+                <button class="tecla" data-som="ride">
+                    <span class="nome">Ride</span>
+                    <span class="atalho">R</span>
+                </button>
+
+                <button class="tecla" data-som="tink">
+                    <span class="nome">Tink</span>
+                    <span class="atalho">T</span>
+                </button>
+                <button class="tecla" data-som="tom">
+                    <span class="nome">Tom</span>
+                    <span class="atalho">M</span>
+                </button>
+                <button class="tecla" data-som="boom">
+                    <span class="nome">Boom</span>
+                    <span class="atalho">B</span>
+                </button>
+            </div>
+
+            <div class="controles">
+                <button id="btn-ajuda" class="btn-ajuda">
+                    <i class="fa-solid fa-circle-question"></i> Ajuda
+                </button>
+            </div>
+
+            <div id="status" class="status">
+                <i class="fa-solid fa-headphones"></i> 
+                <span>Clique em uma tecla para tocar</span>
+            </div>
+
+            <div class="footer">
+                <p><i class="fa-regular fa-keyboard"></i> Teclas: K, S, C, H, O, R, T, M, B</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+</html>
