@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="player-app">
+            <h1><i class="fa-solid fa-music"></i> Piano Digital</h1>
+            
+            <div class="subtitle">
+                <p>Clique nas teclas ou use o teclado para tocar</p>
+            </div>
+
+            <!-- Teclado 3x4 com estilo piano -->
+            <div class="teclado">
+                <button class="tecla natural" data-som="1">
+                    <span class="nota">Dó</span>
+                    <span class="atalho">1</span>
+                </button>
+                <button class="tecla sustenido" data-som="2">
+                    <span class="nota">Dó#</span>
+                    <span class="atalho">2</span>
+                </button>
+                <button class="tecla natural" data-som="3">
+                    <span class="nota">Ré</span>
+                    <span class="atalho">3</span>
+                </button>
+                <button class="tecla sustenido" data-som="4">
+                    <span class="nota">Ré#</span>
+                    <span class="atalho">4</span>
+                </button>
+
+                <button class="tecla natural" data-som="5">
+                    <span class="nota">Mi</span>
+                    <span class="atalho">5</span>
+                </button>
+                <button class="tecla natural" data-som="6">
+                    <span class="nota">Fá</span>
+                    <span class="atalho">6</span>
+                </button>
+                <button class="tecla sustenido" data-som="7">
+                    <span class="nota">Fá#</span>
+                    <span class="atalho">7</span>
+                </button>
+                <button class="tecla natural" data-som="8">
+                    <span class="nota">Sol</span>
+                    <span class="atalho">8</span>
+                </button>
+
+                <button class="tecla sustenido" data-som="9">
+                    <span class="nota">Sol#</span>
+                    <span class="atalho">9</span>
+                </button>
+                <button class="tecla natural" data-som="0">
+                    <span class="nota">Lá</span>
+                    <span class="atalho">0</span>
+                </button>
+                <button class="tecla sustenido" data-som="-">
+                    <span class="nota">Lá#</span>
+                    <span class="atalho">-</span>
+                </button>
+                <button class="tecla natural" data-som="=">
+                    <span class="nota">Si</span>
+                    <span class="atalho">=</span>
+                </button>
+            </div>
+
+            <div class="controles">
+                <button id="btn-ajuda" class="btn-ajuda">
+                    <i class="fa-solid fa-circle-question"></i> Ajuda
+                </button>
+            </div>
+
+            <div id="status" class="status">
+                <i class="fa-solid fa-headphones"></i> 
+                <span>Clique em uma tecla para tocar</span>
+            </div>
+
+            <div class="footer">
+                <p><i class="fa-regular fa-keyboard"></i> Teclas: 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, -, =</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+</html>
