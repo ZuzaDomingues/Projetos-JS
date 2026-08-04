@@ -1,0 +1,139 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e3f2fd;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container principal */
+.qr-code-generator {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.qr-code-generator::before {
+    content: 'Gerador de QR Code';
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Container dos inputs lado a lado */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+/* Input de URL - ocupa o espaço restante */
+.qr-url {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    min-width: 0;
+}
+
+/* Input de tamanho - tamanho fixo */
+.qr-size {
+    width: 90px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Remove as setas do input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Botão */
+.generate-qr-code {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.generate-qr-code:hover {
+    background-color: #1565c0;
+}
+
+/* Container do QR Code */
+#qrcode {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 180px;
+}
+
+#qrcode img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mensagem quando não há QR Code */
+#qrcode:empty::before {
+    content: 'Aguardando geração...';
+    color: #999;
+    font-size: 13px;
+}
+
+/* Responsividade - em telas pequenas, inputs ficam um embaixo do outro */
+@media (max-width: 500px) {
+    .qr-code-generator {
+        padding: 20px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .qr-size {
+        width: 100%;
+    }
+
+    #qrcode {
+        min-height: 140px;
+        padding: 15px;
+    }
+}
